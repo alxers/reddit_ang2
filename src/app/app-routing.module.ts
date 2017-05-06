@@ -5,7 +5,13 @@ import { AuthGuard } from './guards/auth.guard';
 // import { PageNotFoundComponent } from './not-found.component';
 const appRoutes: Routes = [
   { path: 'login', component: LoginComponent },
-  { path: '',   redirectTo: '/', pathMatch: 'full', canActivate: [AuthGuard] },
+  { path: '',
+    pathMatch: 'full',
+    canActivate: [AuthGuard],
+    children: [
+      
+    ]
+  },
   // { path: '**', component: PageNotFoundComponent }
 ];
 @NgModule({
